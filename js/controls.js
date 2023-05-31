@@ -29,11 +29,6 @@ export default function Controls({
   function getTime() {
     const minutes = inputMinutes.value
     const seconds = inputSeconds.value
-
-    // if (!newMinutes) {
-    //   return false
-    // }
-
     return {minutes, seconds}
   }
 

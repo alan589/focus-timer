@@ -1,17 +1,17 @@
-const buttonPlay = document.querySelector('.play')
-const buttonPause = document.querySelector('.pause')
-const buttonStop = document.querySelector('.stop')
-const buttonSet = document.querySelector('.set')
-const buttonSoundOn = document.querySelector('.sound-on')
-const buttonSoundOff = document.querySelector('.sound-off')
-const minutesDisplay = document.querySelector('.minutes')
-const secondsDisplay = document.querySelector('.seconds')
-const formButton = document.querySelector('.form-button')
-const colorButton = document.querySelector('.color-button')
-const modalForm = document.querySelector('.modal-form')
-const modalColor = document.querySelector('.modal-color')
-const inputMinutes = document.querySelector('#input-minutes')
-const inputSeconds = document.querySelector('#input-seconds')
+const buttonPlay = document.querySelector(".play");
+const buttonPause = document.querySelector(".pause");
+const buttonStop = document.querySelector(".stop");
+const buttonSet = document.querySelector(".set");
+const buttonSoundOn = document.querySelector(".sound-on");
+const buttonSoundOff = document.querySelector(".sound-off");
+const minutesDisplay = document.querySelector(".minutes");
+const secondsDisplay = document.querySelector(".seconds");
+const formButton = document.querySelector(".form-button");
+const colorButton = document.querySelector(".color");
+const modalForm = document.querySelector(".modal-form");
+const modalColor = document.querySelector(".modal-color");
+const inputMinutes = document.querySelector("#input-minutes");
+const inputSeconds = document.querySelector("#input-seconds");
 
 export {
   buttonPlay,
@@ -27,5 +27,5 @@ export {
   modalColor,
   inputMinutes,
   inputSeconds,
-  colorButton
-}
+  colorButton,
+};
