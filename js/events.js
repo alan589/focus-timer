@@ -9,9 +9,15 @@ import {
   modalForm,
   modalColor,
   colorButton,
+  colorInput,
+  colorModalButton,
+  root,
+  rootStyles,
+  darkMode,
+  body,
 } from "./elements.js";
 
-export default function ({ controls, timer, sound }) {
+export default function ({ controls, timer, sound, config }) {
   buttonPlay.addEventListener("click", function () {
     controls.play();
     timer.countdown();
@@ -35,7 +41,7 @@ export default function ({ controls, timer, sound }) {
     buttonSoundOff.classList.add("hide");
     sound.bgAudio.play();
   });
-  
+
   buttonSoundOn.addEventListener("click", function () {
     buttonSoundOn.classList.add("hide");
     buttonSoundOff.classList.remove("hide");
@@ -56,36 +62,27 @@ export default function ({ controls, timer, sound }) {
 
   // REFATORAR TODO O CODIGO ABAIXO E GUARDAR OS DADOS NO BD DO BROWSER
 
-  document.querySelector("#color-input").oninput = (e) => {
-    let root = document.querySelector(":root");
+  colorInput.addEventListener("input", (e) => {
     root.style.setProperty("--base-color", e.target.value);
-  };
+    config.setColorLocalStorage(e.target.value);
+  });
 
   colorButton.addEventListener("click", () => {
     modalColor.classList.add("open");
   });
 
-  document
-    .querySelector(".color-modal-button")
-    .addEventListener("click", () => {
-      modalColor.classList.remove("open");
-    });
+  colorModalButton.addEventListener("click", () => {
+    modalColor.classList.remove("open");
+  });
 
-  document.querySelector(".dark-mode").onclick = (e) => {
-    document.querySelector(".dark-mode").classList.toggle("on");
-    document.querySelector(".color").classList.toggle("on");
+  darkMode.addEventListener("click", () => {
+    darkMode.classList.toggle("on");
+    colorButton.classList.toggle("on");
+    body.classList.toggle("darkmode-on");
 
-    let root = document.querySelector(":root");
-    let rootStyles = getComputedStyle(root);
+    const isDarkmodeOn = body.classList.contains("darkmode-on");
 
-    const bgColor = rootStyles.getPropertyValue("--bg-color");
-
-    if (bgColor === "#fff") {
-      root.style.setProperty("--bg-color", "#000");
-      root.style.setProperty("--text-color", "#fff");
-    } else {
-      root.style.setProperty("--bg-color", "#fff");
-      root.style.setProperty("--text-color", "#000");
-    }
-  };
+    if (isDarkmodeOn) config.setDarkModeLocalStorage(true);
+    else config.setDarkModeLocalStorage(false);
+  });
 }

@@ -2,12 +2,13 @@
   font-size: 62.5%;
 
   --bg-color: #fff;
-  --base-color: 194;
+  --bg-color-darkmode: #000;
   --bg-primary-light: hsla(var(--base-color), 100%, 17%, 0.7);
   --primary-color: hsl(var(--base-color), 100%, 50%);
   --primary-color-hover: hsl(var(--base-color), 100%, 40%);
   --secondary-color-hover: hsl(0, 0%, 80%);
   --text-color: #000;
+  --text-color-darkmode: #fff;
   --bg-form-button: #ccc;
   --tt-label: #000;
 
@@ -27,6 +28,11 @@ body {
   font-family: "Roboto", sans-serif;
   display: grid;
   min-height: 100vh;
+}
+
+body.darkmode-on {
+  background-color: var(--bg-color-darkmode);
+  color: var(--text-color-darkmode);
 }
 
 main {

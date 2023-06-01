@@ -1,7 +1,8 @@
-import Controls from "./controls.js"
-import Timer from "./timer.js"
-import Sound from "./sounds.js"
-import Events from "./events.js"
+import Controls from "./controls.js";
+import Timer from "./timer.js";
+import Sound from "./sounds.js";
+import Events from "./events.js";
+import Config from "./config.js";
 import {
   buttonPause,
   buttonPlay,
@@ -10,8 +11,21 @@ import {
   minutesDisplay,
   secondsDisplay,
   inputMinutes,
-  inputSeconds
-} from "./elements.js"
+  inputSeconds,
+  root,
+  body,
+  colorButton,
+  darkMode,
+} from "./elements.js";
+
+const config = Config({
+  root,
+  body,
+  colorButton,
+  darkMode,
+});
+
+config.setInitialConfigPage();
 
 const controls = Controls({
   buttonPause,
@@ -19,15 +33,15 @@ const controls = Controls({
   buttonSet,
   buttonStop,
   inputMinutes,
-  inputSeconds
-})
+  inputSeconds,
+});
 
 const timer = Timer({
-  minutesDisplay, 
-  secondsDisplay, 
-  resetControls: controls.reset
-})
+  minutesDisplay,
+  secondsDisplay,
+  resetControls: controls.reset,
+});
 
-const sound = Sound()
+const sound = Sound();
 
-Events({controls, timer, sound})
+Events({ controls, timer, sound, config });
