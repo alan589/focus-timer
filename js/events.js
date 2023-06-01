@@ -60,8 +60,6 @@ export default function ({ controls, timer, sound, config }) {
     modalForm.classList.remove("open");
   });
 
-  // REFATORAR TODO O CODIGO ABAIXO E GUARDAR OS DADOS NO BD DO BROWSER
-
   colorInput.addEventListener("input", (e) => {
     root.style.setProperty("--base-color", e.target.value);
     config.setColorLocalStorage(e.target.value);

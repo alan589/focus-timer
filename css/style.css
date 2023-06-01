@@ -126,18 +126,6 @@ footer {
   cursor: pointer;
 }
 
-/* FAZER O HOVER NOS BOTOES DE NAV */
-/* .config {
-    color: #ccc;
-    font-size: 1.6rem;
-    font-weight: 700;
-    transition: color 200ms;
-} */
-
-/* .config:hover {
-  color: #cccccccb;
-} */
-
 .play svg,
 .pause svg,
 .set svg,
